@@ -1,0 +1,143 @@
+Data Binding
+------------
+0. Definition
+1. Interpolation
+2. Property Binding
+3. Event Binding
+4. Two Way Binding
+5. Style Binding
+6. Class Binding
+7. Directives
+   7.1. Structural
+      a. *ngFor
+      b. *ngIf
+   7.2. Attribute
+      a. ngStyle
+	  b. ngClass
+8. Component Interaction
+   a. Input decorator
+   b. Output decorator
+
+------------------------------------------------------------
+<!-- Product Detail (Panel) -->
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<!-- Product name -->
+		</h3>
+	</div>
+	<div class="panel-body">
+		<p>
+			<!-- Product description -->
+		</p>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<span> 
+				<!-- Product availability -->
+			</span> 
+		</li>
+		<li class="list-group-item">
+			<!-- Product price -->
+		</li>
+	</ul>
+</div>
+
+------------------------------------------------------------
+<!-- Products -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Products</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <!-- Product Form -->
+			<p>Product form comes here</p>
+        </div>
+
+        <div class="col-sm-7">
+            <!-- Product List -->
+			<p>Product list comes here</p>
+       </div>
+    </div>
+</div>
+
+------------------------------------------------------------
+<!-- Product Form -->
+<div class="well well-lg">
+    <form>
+		<div class="form-group">
+			<label for="productName">Name</label>
+			<input type="text" class="form-control" 
+				id="productName"
+				name="name">
+		</div>
+		<div class="form-group">
+			<label for="productDescription">Description</label>
+			<textarea class="form-control"
+				id="productDescription" 
+				cols="30" 
+				rows="4"
+				name="description">
+			</textarea>
+		</div>
+        <div class="form-group">
+            <label for="productPrice">Price</label>
+            <input type="text" class="form-control" 
+                id="productPrice"
+                name="price">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" 
+                    id="isAvailable" 
+                    value="true"
+                    name="isAvailable"> Available
+            </label>
+        </div>
+        <button name="save" class="btn btn-primary">
+            Save
+        </button>
+    </form>
+</div>
+<div class="alert alert-success">
+    Product saved successfully!
+</div>
+
+------------------------------------------------------------
+<!-- Product Detail (Complete) -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title">
+          {{ product.name | uppercase }}
+      </h3>
+  </div>
+  <div class="panel-body">
+        <p [ngStyle]="{ color: product.isAvailable ? 'blue' : 'red' }">
+        <!-- <p [style.color]="product.isAvailable ? 'blue' : 'red'"> -->
+            {{ product.description }}
+        </p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+            <!-- <span class="label" [ngClass]="{ 'label-primary': product.isAvailable, 'label-warning': !product.isAvailable }"> -->
+            <span class="label" [class.label-primary]="product.isAvailable" [class.label-warning]="!product.isAvailable"> 
+                {{ product.isAvailable ? "Available" : "Not Available" }}
+            </span> 
+      </li>
+      <li class="list-group-item">
+          {{ product.price | currency:'INR':true }}
+      </li>
+  </ul>
+  <div class="panel-footer">
+    <button class="btn btn-primary btn-sm">
+      Edit
+    </button>
+    <button class="btn btn-warning btn-sm">
+      Delete
+    </button>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+                         Component          Server        DB Server
+1. Product List   - Get Product Details - Product API - Product table 
+2. Product Detail - Get Product Details - Product API - Product table
+3. Order List     - Get Product Details - Product API - Product table
+4. Shopping Cart  - Get Product Details - Product API - Product table
+
+JS
+AJAX
+
+//http.get('http://www.amazon.in/api/productmgmt/products')
+ProductService.getProducts()
+
+//http.get('http://www.amazon.in/api/productmgmt/products')
+ProductService.getProducts()
+
+//http.get('http://www.amazon.in/api/productmgmt/products')
+ProductService.getProducts()
+
+//http.get('http://www.amazon.in/api/productmgmt/products')
+ProductService.getProducts()
+
+class ProductService {
+
+   getProducts() {
+       http.get('http://www.amazon.in/api/productmgmt/products')
+   }
+}
+
+function LogDecorator() {
+
+}
+
+                       Cross Cutting Concerns
+ProductMgmt  Logging (LogDecorator) - ExceptionMgmt - PerformanceMgmt
+   (LogDecorator)ProductComponent - 
+   (LogDecorator)ProductService
+   
+OrderMgmt    Logging - ExceptionMgmt - PerformanceMgmt
+   (LogDecorator)OrderDetail
+   (LogDecorator)xyz
+   
+UserMgmt     Logging - ExceptionMgmt - PerformanceMgmt
+
+

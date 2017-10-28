@@ -1,0 +1,90 @@
+TypeScript
+
+Modules
+-------
+- ES6 - new concept of modules was introduced. TS shares this concept
+- Help in organizing JavaScript code
+- Executed within their own scope, not in global scope
+  i.e., variables, functions, classes, etc. declared in a module are not visible 
+  outside the module unless they are explicitly exported
+- To consume a variable, function, class, interface etc exported from a different module,
+  it has to be imported
+  
+Export / Import Syntax
+- Export Product class from 'product.ts'
+    export { Product };
+
+- Import Product from './product.ts'
+    import { Product } from './product';
+
+Default Export
+- Every module can have a default export
+- Is marked with the keyword 'default'
+- Only one default export is allowed per module
+- Imported using default import 
+
+Syntax
+- product.ts
+    export default class Product {...} 
+	
+- app.ts
+	import Product from './product';
+
+Module Loaders
+- Modules import one another using a module loader. 
+
+- At runtime the module loader is responsible for locating and executing all dependencies of a module before executing it. 
+
+- Well-known modules loaders used in JavaScript are 
+  1. CommonJS module loader for Node.js and 
+  2. Require.js for Web applications.
+  3. AMD
+  4. UMD
+  5. ES2015
+  
+- Are fast and asynchronous
+
+Namespaces
+----------
+Note - Modules are better than namespaces
+TypeScript 'Internal Modules' are now 'Namespaces'. 'External Modules' are now simply 'Modules'.
+
+- Used to organize code in neat way
+- Reduce friction of same type usage from different files
+- Are simply named JavaScript objects in the global namespace
+
+Decorators
+----------
+- A special kind of declaration that can be attached to a class declaration, method, accessor, property and parameter
+- Provide a way to add both annotations and meta-programming syntax for class declarations and its members 
+- Experimental feature in TS, that is, experimentalDecorators compiler option should be enabled
+
+- Allow us to do declarative programming in JavaScript
+  Declarative - Say what you want
+  Imperative - Say how to get what you want
+  
+Class Decorators
+- Declared just before a class declaration
+- Is applied to the constructor of the class
+- Can be used to observe, modify or replace a class definition
+
+Method Decorators
+- Declared just before a method declaration
+- Is applied to the Property Descriptor for the method
+- Can be used to observe, modify, or replace a method definition
+
+Property Decorators
+- Declared just before a property declaration
+
+Parameter Decorators
+- Declared just before a parameter declaration. 
+- Applied to the function for a class constructor or method declaration.
+
+Applications
+- Logging
+- Apply Formatting
+- Apply Permission Checks
+- Timing Functions (measure performance)
+- Setting Validators
+
+URL: https://cabbageapps.com/fell-love-js-decorators/

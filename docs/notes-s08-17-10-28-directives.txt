@@ -1,0 +1,26 @@
+Questions
+---------
+1. How to bind a property? How to bind an event?
+2. How can we achieve two way binding in Angular application ?
+3. What is the difference between event binding and property binding ?
+4. What is a directive? What is its purpose?
+5. What are the types of directives?
+
+Data Binding
+------------
+1. Directives
+   1.1. Structural
+      a. *ngFor
+      b. *ngIf
+	  c. ngSwitch - *ngSwitchCase - *ngSwitchDefault 
+	     https://angular.io/api/common/NgSwitch
+   1.2. Attribute
+      a. ngStyle
+	  b. ngClass
+2. Template Variables
+3. Component Interaction
+   a. Input decorator
+   b. Output decorator
+4. Component Lifecycle Hooks
+5. Debugging Angular apps
+6. Custom Directives
