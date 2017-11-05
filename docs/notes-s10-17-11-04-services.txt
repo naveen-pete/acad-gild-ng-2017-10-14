@@ -1,0 +1,41 @@
+Questions
+---------
+1. Explain the steps to create and use a custom directive.
+   - Create a class
+   - Decorate with @Directive()
+   - Define 'selector' property - e.g. myDirective
+   - AppModule.ts - 
+      import { MyDirective } from './my-directive.ts';
+	  
+      @NgModule({
+	     declarations: [ MyDirective ]
+	  })
+	  
+   - <p myDirective></p>
+   - elementRef
+
+Services
+--------
+1. Services
+   a. Creating a service
+   b. Consuming a service
+      i. In a component
+	  ii. In another service
+   c. Dependency injection
+2. Forms
+
+Design
+------
+1. DRY principle - Do not Repeat Yourself
+2. Single Responsibility Principle - Separation of Concerns DOT Do One Thing
+   a. Code that Manages the user interface
+   
+3. Introduce a new class, and this is a service
+   b. Interacts with the server to retrieve product data
+   
+   
+   Template                 Component (class)      Service (class)          Products REST API
+   product-detail.html ===> product-detail.ts ===> products-service.ts ===> http://amazon.in/api/products
+                                                   (Data service)
+												   
+3. Dependency Injection - Design Pattern

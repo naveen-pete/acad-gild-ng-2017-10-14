@@ -1,0 +1,11 @@
+Services
+------------
+1. Template Variables
+2. Component Lifecycle Hooks
+3. Custom Directives
+4. Services
+   a. Creating a service
+   b. Consuming a service
+      i. In a component
+	  ii. In another service
+   c. Dependency injection
