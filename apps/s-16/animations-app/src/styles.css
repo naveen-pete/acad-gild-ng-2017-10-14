@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 50px;
+  width: 400px;
+  border: 1px solid crimson;
+}
+
+li {
+  display: block;
+  line-height: 50px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: khaki;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}

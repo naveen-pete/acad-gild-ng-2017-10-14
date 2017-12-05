@@ -1,0 +1,9 @@
+<h2>
+  Advanced Transitions
+</h2>
+
+<ul>
+  <li *ngFor="let book of books" [@advancedTransitions]="book.state" (click)="book.toggleState()">
+    {{ book.name }}
+  </li>
+</ul>

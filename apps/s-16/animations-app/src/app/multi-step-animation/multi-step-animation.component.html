@@ -1,0 +1,22 @@
+<h2>
+  Animations with Keyframes
+</h2>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Book Name" name="bookName" [(ngModel)]="bookName">
+  <span class="input-group-btn">
+    <button class="btn btn-primary" type="button" (click)="onAdd()">Add</button>
+  </span>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let book of books" [@multiStepFlyInOut]="'in'">
+      {{ book.name }} <button class="btn btn-default pull-right" (click)="onRemove(book)"><span class="glyphicon glyphicon-trash"></span></button>
+    </li>
+  </ul>
+</div>
+
+<hr>
+<button type="button" class="btn btn-primary" (click)="onToggleState()">Toggle State</button>
+<br><br>
+<div [@multiStepText]="currentState">Hello World!</div>

@@ -1,0 +1,17 @@
+<h2>
+  Enter and leave from different states
+</h2>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Book Name" name="bookName" [(ngModel)]="bookName">
+  <span class="input-group-btn">
+    <button class="btn btn-primary" type="button" (click)="onAdd()">Add</button>
+  </span>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let book of books" [@enterLeaveState]="book.state" (click)="book.toggleState()">
+      {{ book.name }} <button class="btn btn-default pull-right" (click)="onRemove(book)"><span class="glyphicon glyphicon-trash"></span></button>
+    </li>
+  </ul>
+</div>

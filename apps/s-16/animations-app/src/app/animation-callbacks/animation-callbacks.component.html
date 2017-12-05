@@ -1,0 +1,7 @@
+<h2>Animation Callbacks</h2>
+
+<button type="button" class="btn btn-primary" (click)="onToggleState()">Toggle State</button>
+<br><br>
+<div [@textAnimation]="currentState" (@textAnimation.start)="animationStarted($event)" (@textAnimation.done)="animationDone($event)">
+  Hello World!
+</div>
